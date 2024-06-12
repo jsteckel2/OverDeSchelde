@@ -1,7 +1,7 @@
 {
   "name": "Over De Schelde",
   "short_name": "ODS",
-  "description": "Een app/website die de vertrekuren van het veer in Kruibeke - Hoboken en Bazel - Hemiksem weergeeft.",
+  "description": "Overdeschelde.be is een applicatie waarop de verschillende veerboten over de Schelde in de regio Antwerpen kunnen worden geraadpleegd.",
   "theme_color": "#fff",
   "background_color": "#fff",
   "display": "standalone",
@@ -9,7 +9,7 @@
   "scope": "/",
   "start_url": "/",
   "lang": "nl",
-  "screenshots" : [
+  "screenshots": [
     {
       "src": "images/screenshot_android.jpg",
       "sizes": "3088x1440",
@@ -58,7 +58,18 @@
       "src": "images/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose" :"any"
+      "purpose": "any"
     }
+  ],
+  "id": "ODS",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=be.waterbus.waterbus&amp;hl=nl&amp;gl=US",
+      "id": ""
+    }
+  ],
+  "categories": [
+    "travel"
   ]
 }

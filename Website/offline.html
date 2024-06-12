@@ -1,109 +1,167 @@
 <!DOCTYPE html>
 <html>
-  <head>
-
-  <script>
-        if (typeof navigator.serviceWorker !== 'undefined') {
-            navigator.serviceWorker.register('sw.js')
-        }
-    </script>
-        <link rel="manifest" href="/site.webmanifest">   
-            <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWVPBP6PBJ"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-HWVPBP6PBJ');
-        </script>
-    <title>Vertrekuren Veer Bazel/Kruibeke/Hemiksem/Hoboken</title>
-    <link rel="stylesheet" href="stylesheet.css?rnd=23">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2694707267972749" crossorigin="anonymous"></script>
-    <script src="generateFerryTables.js?rnd=23"></script>
 
 
-
-  </head>
-  <body>
-    <div class="main-div">
-        <div id="navbar">
-            <a href="index.php">Volgende afvaarten</a>
-            <a href="timetableWeek.php">Uurtabel Week</a>
-            <a href="timetableWeekend.php">Uurtabel Weekend</a>
-            <a href="widgetAndroid.php">Installatie Smartphone</a>
-        </div>
-
-        <center><h1 class="title">Volgende Afvaarten:</h1></center>
-        <hr>
-        <table class="timecard">
-            <tr>
-            <td id="next-departures-bazel"> </td>
-            <td id="next-departures-hemiksem"> </td>
-            <td id="next-departures-kruibeke"> </td>
-            <td id="next-departures-hoboken"> </td>
-            </tr>
-        </table>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     
-        <script>
-            var currentTime = new Date().toLocaleTimeString('nl-BE', {hour: '2-digit', minute:'2-digit'});
-            var weekday = new Date().getDay(); // 0 = Sunday, 1 = Monday, etc.
-            var nextDeparturesBazel = getNextDepartures(weekday, departuresBazelWeek, departuresBazelWeekend, 5);
-            var nextDeparturesHemiksem = getNextDepartures(weekday, departuresHemiksemWeek, departuresHemiksemWeekend, 5);
-            var nextDeparturesKruibeke = getNextDepartures(weekday, departuresKruibekeWeek, departuresKruibekeWeekend, 5);
-            var nextDeparturesHoboken = getNextDepartures(weekday, departuresHobokenWeek, departuresHobokenWeekend, 5);
-
-            let tableHtmlBazel = '<table class="timerow"><tr><th>Bazel</th></tr>';
-            for (let i = 0; i < nextDeparturesBazel.length; i++) {
-            tableHtmlBazel += '<tr><td>' + nextDeparturesBazel[i] + '</td></tr>';
+        <meta name="title" content="Over De Schelde">
+        <meta name="description" content="Website to show the ferry times of the Schelde near Antwerp">
+        <meta name="keywords" content="Veer, Kruibeke, Hoboken, Antwerpen, Sint-Anna, Bazel, Hemiksem, veerboot, overzet, overzetboot, schelde, overzetten, ferry, uren overzetboot kruibeke,uren overzetboot Hoboken, uren overzetboot linkeroever, uren overzetboot kruibeke, ">
+        <meta name="robots" content="index, follow">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+      <script>
+            if (typeof navigator.serviceWorker !== 'undefined') {
+                navigator.serviceWorker.register('sw.js')
             }
-            tableHtmlBazel += '</table>';
-            document.getElementById('next-departures-bazel').innerHTML = tableHtmlBazel;
-
-            let tableHtmlHemiksem = '<table class="timerow"><tr><th>Hemiksem</th></tr>';
-            for (let i = 0; i < nextDeparturesHemiksem.length; i++) {
-            tableHtmlHemiksem += '<tr><td>' + nextDeparturesHemiksem[i] + '</td></tr>';
-            }
-            tableHtmlHemiksem += '</table>';
-            document.getElementById('next-departures-hemiksem').innerHTML = tableHtmlHemiksem;        
-
-            let tableHtmlKruibeke = '<table class="timerow"><tr><th>Kruibeke</th></tr>';
-            for (let i = 0; i < nextDeparturesKruibeke.length; i++) {
-            tableHtmlKruibeke += '<tr><td>' + nextDeparturesKruibeke[i] + '</td></tr>';
-            }
-            tableHtmlKruibeke += '</table>';
-            document.getElementById('next-departures-kruibeke').innerHTML = tableHtmlKruibeke; 
-
-            let tableHtmlHoboken = '<table class="timerow"><tr><th>Hoboken</th></tr>';
-            for (let i = 0; i < nextDeparturesHoboken.length; i++) {
-            tableHtmlHoboken += '<tr><td>' + nextDeparturesHoboken[i] + '</td></tr>';
-            }
-            tableHtmlHoboken += '</table>';
-            document.getElementById('next-departures-hoboken').innerHTML = tableHtmlHoboken;  
         </script>
+    
+            <link rel="manifest" href="/site.webmanifest">   
+                <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWVPBP6PBJ"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HWVPBP6PBJ');
+            </script>
+        <title>Over de Schelde: de vertrektijden van de veerboten over de Schelde.</title>
+            
+        <link rel="stylesheet" href="stylesheet.css?rnd=6.22">
+        <script src="generateFerryTables.js?rnd=3.141522712215"></script>
+        <script src='writeferrytables.js?rnd=3.14152712221'></script>
+        <script src='ferrydata.js?rnd=3.14152712221'></script>
+    
+    
+        <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2694707267972749" crossorigin="anonymous"></script>-->
+      </head>
 
-        <p class="info-header">Meer informatie over het veer is te vinden op de website van het Agentschap voor Maritieme Dienstverlening en Kust:</p>
-        <div id="linkbar">    
-            <a href="https://www.agentschapmdk.be/nl/veerdiensten/veerdienst-kruibeke-hoboken" target="new">AMDK - Hoboken/Kruibeke</a>
-            <a href="https://www.agentschapmdk.be/nl/veerdiensten/veerdienst-kruibeke-hoboken" target="new">AMDK - Hemiksem/Bazel</a>
-        </div>
+  <body>
+    <body class="bg-gray-100 overflow-scroll">
+        <center>
+        <div class=" py-2"></div>
+            <div class="font-sans bg-white shadow-lg p-4 max-w-6xl px-5 py-5 rounded-lg">
+                <div class=" justify-center 	text-white ">
+  
+                <div class="grid grid-cols-2 lg:grid-cols-4 justify-center gap-x-2  whitespace-nowrap py-1 px-1 bg-ODS-400 text-center text-lg lg:text-xl font-semibold text-white rounded-lg" >
+                    <a href="index.php" class="hover:text-ODS-800 hover:bg-ODS-400 px-2 py-1">Volgende afvaarten</a>
+                    <a href="timetableweek.php" class="hover:text-ODS-800 hover:bg-ODS-400 px-2 py-1">Afvaarten Week</a>
+                    <a href="timetableweekend.php" class="hover:text-ODS-800 hover:bg-ODS-400 px-2 py-1">Afvaarten Weekend</a>
+                    <a href="installation.php" class="hover:text-ODS-800 hover:bg-ODS-400 px-2 py-1">Informatie</a>
+                </div> 
+                    <h1 class="my-2 text-center text-3xl font-semibold text-ODS-800 bg-ODS-100 rounded-lg p-2">Volgende Afvaarten (OFFLINE VERSIE):</h1>
+                    <div class="grid grid-cols-2 lg:grid-cols-8 gap-1 bg-ODS-100 p-3 rounded-lg">
+                        <div class="flex flex-col text-center" id="next-departures-bazel"></div>
+                        <div class="flex flex-col text-center" id="next-departures-hemiksem"></div>
+                        <div class="flex flex-col text-center" id="next-departures-kruibeke"></div>
+                        <div class="flex flex-col text-center" id="next-departures-hoboken"></div>
+                        <div class="flex flex-col text-center" id="next-departures-lo"></div>
+                        <div class="flex flex-col text-center" id="next-departures-antwerpen"></div>
+                        <div class="flex flex-col text-center" id="next-departures-rupelmonde"></div>
+                        <div class="flex flex-col text-center" id="next-departures-wintam"></div>
+                    </div>
+                    
 
+                    <div class=" py-1"></div>
 
-        <center><script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'B0B2KDGXB');kofiwidget2.draw();</script> </center>
-
-        
- 
-
-        <p class="disclaimer">
-        Disclaimer: The information provided on this website is for general informational purposes only. While we strive to 
-        ensure that the information is up-to-date and accurate, we make no representations or warranties of any kind, express or 
-        implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information.
-        Any reliance you place on such information is therefore strictly at your own risk. We will not be liable for any loss or damage arising 
-        from the use of this website or the information provided."
-        
-        </p>
-    </div>
-
+                        <div class="text-ODS-600 grid grid-cols-1 lg:grid-cols-4 gap-0.5 font-bold bg-ODS-100 rounded-lg p-2" >
+                            <div>
+                                <p class='status'> Veer Hemiksem/Bazel: </p><p class='status text-orange-600 '>Geen Realtime Info</p> 
+                        
+                            </div>
+                        
+                            <div>
+                                <p class='status'> Veer Hoboken/Kruibeke: </p><p class='status text-orange-600 '>Geen Realtime Info</p>    </div>
+                        
+                            <div>
+                                <p class='status'> Veer Sint-Anna/Antwerpen: </p><p class='status text-orange-600 '>Geen Realtime Info</p>    </div>
+                        
+                            <div>
+                                <p class='status'> Veer Rupelmonde/Wintam: </p><p  id='statusRW' class='status text-orange-600 '>Geen Realtime Info</p>    </div>    
+                        </div>    
+                  
+                    <div class=" py-1"></div>
+                    <div class="grid  lg:grid-cols-2 gap-2 ">
+                    
+                        <div class="bg-ODS-100 rounded-lg p-2">
+                            <div class=" py-1"></div>
+                            <div class="text-s text-ODS2-600 flex items-center justify-center space-x-6">
+                                <p class="mr-2">
+                                    <a class="text-ODS2-600 font-bold underline" target="_blank" href="https://ko-fi.com/theprofessorbe">Donaties</a> helpen om de website up-to-date en reclame-vrij te houden, en kunnen veilig worden uitgevoerd via het Ko-Fi platform (<a class="text-ODS2-600 font-bold underline" target="_blank" href="https://ko-fi.com/theprofessorbe">Link</a>).
+                                </p>
+                            </div>   
+                            <div class=" py-1"></div>
+                    
+                            <div class="flex flex-cols items-center justify-center my-3 space-x-5" >
+                                <div class="text-sm" >
+                                    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me', '#29abe0', 'B0B2KDGXB');kofiwidget2.draw();</script> 
+                                </div>
+                                <p class="mr-2 text-sm text-ODS2-600 ">
+                                    Designed by <a href="https://github.com/TheProfessorBE" target="_blank" class="text-ODS2-600 font-bold underline">TheProfessorBE</a>.</br>
+                                </p>
+                            </div>
+                            
+                            
+                     
+                        </div>
+                        <div class="bg-ODS-100 rounded-lg p-2">
+                            
+                            <div class="text-ODS-600 gap-0.5 font-bold">
+                                <p>Meer informatie over het veer is te vinden op:</p>
+                                <div class=" py-0.5"></div>
+                                <div class="text-ODS-600 grid grid-cols-1 lg:grid-cols-4 gap-0.5 ">    
+                                    <a class=" font-semibold hover:text-ODS-800 hover:bg-ODS-300 px-2 py-3 rounded-lg" href="https://www.agentschapmdk.be/nl/veerdiensten/veerdienst-bazel-hemiksem" target="new">Hemiksem Bazel</a>
+                                    <a class=" font-semibold hover:text-ODS-800 hover:bg-ODS2-300 px-2 py-3 rounded-lg " href="https://www.agentschapmdk.be/nl/veerdiensten/veerdienst-kruibeke-hoboken" target="new">Hoboken Kruibeke</a>
+                                    <a class="font-semibold hover:text-ODS-800 hover:bg-ODS-300 px-2 py-3 rounded-lg" href="https://www.agentschapmdk.be/nl/veerdiensten/veerdienst-sint-anna" target="new">Sint-Anna Antwerpen</a>
+                                    <a class="font-semibold hover:text-ODS-800 hover:bg-ODS2-300 px-2 py-3 rounded-lg" href="https://www.vlaamsewaterweg.be/veerdiensten" target="new">Rupelmonde Wintam</a>
+                                </div>
+                                <div class="text-left text-xs font-bold text-red-900" id="lastUpdateText"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!--
+                    <div class=" py-1"></div>
+                    
+                    <div class="text-lg text-ODS-600 bg-ODS-100 rounded-lg p-2 text-center font-bold">
+                        <p>Deze website wordt mede mogelijk gemaakt door:</p>
+                    
+                        <div class="flex flex-col lg:flex-row justify-center items-center mt-3">
+                            <img src="images/dummylogo.png" alt="Installation App" class="mb-2 lg:mb-0 w-20 lg:mx-20">
+                            <img src="images/dummylogo.png" alt="Installation App" class="mb-2 lg:mb-0 w-20 lg:mx-20">
+                            <img src="images/dummylogo.png" alt="Installation App" class="mb-2 lg:mb-0 w-20 lg:mx-20">
+                            <img src="images/dummylogo.png" alt="Installation App" class="mb-2 lg:mb-0 w-20 lg:mx-20">
+                        
+                        </div>
+                    
+                    </div>
+                    -->
+                    
+                    </div>
+                    
+                    <div class=" py-1"></div>
+                    <div class="text-xs text-ODS-600 bg-ODS-100 rounded-lg p-2 text-center">
+                        <p>
+                        <b>Disclaimer:</b> This website is a hobby project by <a href="https://github.com/TheProfessorBE" target="_blank" class="text-ODS2-600 font-bold underline">TheProfessorBE</a>, 
+                        not a professional website. The information provided on this website is for general informational purposes only. While we strive to 
+                        ensure that the information is up-to-date and accurate, we make no representations or warranties of any kind, express or 
+                        implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information.
+                        Any reliance you place on such information is therefore strictly at your own risk. We will not be liable for any loss or damage arising 
+                        from the use of this website or the information provided. Contact us via <a href="mailto:info@overdeschelde.be" target="_blank" class="text-ODS2-600 font-bold underline">info@overdeschelde.be</a>.
+                        </p>
+                    </div>
+                    
+    
+                </div>
+            </div>
+        </center>
+      </body>
+      <script>
+        writeFerryTables(0);
+        setInterval(function() {writeFerryTables(0); }, 60000 ) 
+      </script>
 
   </body>
 </html>

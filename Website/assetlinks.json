@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "be.overdeschelde.www.twa",
+        "sha256_cert_fingerprints": ["C5:03:09:29:0E:44:A3:48:E9:ED:D2:B1:E2:E5:55:FB:79:FA:CD:CD:62:55:A9:C6:E6:9B:A7:C7:EE:07:BF:DA"]
+      }
+    }]
